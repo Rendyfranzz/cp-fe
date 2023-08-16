@@ -1,0 +1,11 @@
+PATCH http://localhost:3000/api/rule/1
+Content-Type: application/json
+
+{
+    "$hargalebih":100,
+    "$jualanlebih":100,
+    "action":90
+}
+
+###
+GET http://localhost:3000/api/rule/1
