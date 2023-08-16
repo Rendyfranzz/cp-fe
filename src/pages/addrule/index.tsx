@@ -67,6 +67,7 @@ export default function index() {
         toast.promise(
             axios.post(`api/static`, data)
               .then((res) => {
+                router.push('/')
               }),
             {
               ...DEFAULT_TOAST_MESSAGE,

@@ -35,11 +35,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     data.id != ruleid
                 )
             })
+            objectData.db = result
+            // console.log(objectData);
 
-            console.log(result);
-
-            // const deletedData = JSON.stringify(result);
-            // await fs.writeFile(jsonDirectory, deletedData);
+            const deletedData = JSON.stringify(objectData);
+            await fs.writeFile(jsonDirectory, deletedData);
 
             res.status(200).json('terhapus')
 

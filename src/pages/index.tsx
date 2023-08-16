@@ -31,13 +31,30 @@ export default function Home(props: any) {
     toast.promise(
       axios.delete(`/api/rule/${params}`)
       .then((res)=>{
-         // getdata(router.query.id)
+        setTimeout(() => {
+          router.reload()
+        }, 1000);
       }),
       {
          ...DEFAULT_TOAST_MESSAGE,
        success: 'Rule Successfully Deleted',
       }
  )
+  }
+
+  function handleReset(){
+    toast.promise(
+      axios.get(`/api/reset`)
+      .then((res)=>{
+        setTimeout(() => {
+          router.reload()
+        }, 1000);
+      }),
+      {
+         ...DEFAULT_TOAST_MESSAGE,
+       success: 'Rule Successfully Reset',
+      }
+      )
   }
 
 
@@ -47,6 +64,9 @@ export default function Home(props: any) {
 
         <button onClick={()=>router.push('/addrule')}>
           tambah data
+        </button>
+        <button onClick={()=>handleReset()}>
+          reset data
         </button>
         <ul className="space-y-5">
           {

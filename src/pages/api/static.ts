@@ -25,8 +25,8 @@ export default async function handler(req : NextApiRequest, res : NextApiRespons
       }
       objectData.db.push(newData)
       console.log(objectData);
-      // const updatedData = JSON.stringify(objectData);
-      // await fs.writeFile(jsonDirectory, updatedData);
+      const updatedData = JSON.stringify(objectData);
+      await fs.writeFile(jsonDirectory, updatedData);
 
       res.status(200).json("success")
       
