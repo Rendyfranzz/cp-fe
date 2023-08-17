@@ -12,6 +12,7 @@ export default async function handler(req : NextApiRequest, res : NextApiRespons
   //Return the content of the data file in json format
 
   if(req.method == 'GET'){
+    res.setHeader("Access-Control-Allow-Origin", "*");
     res.status(200).json(JSON.parse(fileContents));
   }
   if(req.method == 'POST'){

@@ -19,7 +19,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     data.id == ruleid
                 )
             })
-        
+            res.setHeader("Access-Control-Allow-Origin", "*");
             res.status(200).json(result)
         } catch (error) {
             res.status(500).json(error)
