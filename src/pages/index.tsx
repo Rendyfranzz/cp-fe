@@ -72,7 +72,8 @@ export default function Home(props: any) {
           {
             data.db.map((data: any, index: any) => {
               return (
-                <li key={index}>
+                <li key={index} className="border shadow-md p-4 rounded-md flex justify-between">
+                  <div>
                   <p>
                     {data.name}
                   </p>
@@ -88,6 +89,7 @@ export default function Home(props: any) {
                       )
                     })
                   }
+                  </div>
                   <div className="flex space-x-10 w-full">
                     <button onClick={() => handleOnclick(data.id)}>
                       detail
